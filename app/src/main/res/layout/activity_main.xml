@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".game.GameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FBE9E7"
+        android:orientation="horizontal"></LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hangmanLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50">
+
+        <ImageView
+            android:id="@+id/hangmanImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hangman___stage___starting_out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"></androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/keyboardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="35"
+        android:background="#FBE9E7"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <LinearLayout
+            android:id="@+id/keyboardRow1"
+            style="@style/keyboardRow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_max="600dp">
+
+            <Button
+                android:id="@+id/keyboardButton1"
+                style="@style/keyboardButton"
+                android:text="A" />
+
+            <Button
+                android:id="@+id/keyboardButton2"
+                style="@style/keyboardButton"
+                android:text="B" />
+
+            <Button
+                android:id="@+id/keyboardButton3"
+                style="@style/keyboardButton"
+                android:text="C" />
+
+            <Button
+                android:id="@+id/keyboardButton4"
+                style="@style/keyboardButton"
+                android:text="D" />
+
+            <Button
+                android:id="@+id/keyboardButton5"
+                style="@style/keyboardButton"
+                android:text="E" />
+
+            <Button
+                android:id="@+id/keyboardButton6"
+                style="@style/keyboardButton"
+                android:text="F" />
+
+            <Button
+                android:id="@+id/keyboardButton7"
+                style="@style/keyboardButton"
+                android:text="G" />
+
+            <Button
+                android:id="@+id/keyboardButton8"
+                style="@style/keyboardButton"
+                android:text="H" />
+
+            <Button
+                android:id="@+id/keyboardButton9"
+                style="@style/keyboardButton"
+                android:text="I" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/keyboardRow2"
+            style="@style/keyboardRow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/keyboardRow1"
+            app:layout_constraintWidth_max="600dp">
+
+            <Button
+                android:id="@+id/keyboardButton10"
+                style="@style/keyboardButton"
+                android:text="J" />
+
+            <Button
+                android:id="@+id/keyboardButton11"
+                style="@style/keyboardButton"
+                android:text="K" />
+
+            <Button
+                android:id="@+id/keyboardButton12"
+                style="@style/keyboardButton"
+                android:text="L" />
+
+            <Button
+                android:id="@+id/keyboardButton13"
+                style="@style/keyboardButton"
+                android:text="M" />
+
+            <Button
+                android:id="@+id/keyboardButton14"
+                style="@style/keyboardButton"
+                android:text="N" />
+
+            <Button
+                android:id="@+id/keyboardButton15"
+                style="@style/keyboardButton"
+                android:text="O" />
+
+            <Button
+                android:id="@+id/keyboardButton16"
+                style="@style/keyboardButton"
+                android:text="P" />
+
+            <Button
+                android:id="@+id/keyboardButton17"
+                style="@style/keyboardButton"
+                android:text="Q" />
+
+            <Button
+                android:id="@+id/keyboardButton18"
+                style="@style/keyboardButton"
+                android:text="R" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/keyboardRow3"
+            style="@style/keyboardRow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/keyboardRow2"
+            app:layout_constraintWidth_max="600dp">
+
+            <Button
+                android:id="@+id/keyboardButton19"
+                style="@style/keyboardButton"
+                android:text="S" />
+
+            <Button
+                android:id="@+id/keyboardButton20"
+                style="@style/keyboardButton"
+                android:text="T" />
+
+            <Button
+                android:id="@+id/keyboardButton21"
+                style="@style/keyboardButton"
+                android:text="U" />
+
+            <Button
+                android:id="@+id/keyboardButton22"
+                style="@style/keyboardButton"
+                android:text="V" />
+
+            <Button
+                android:id="@+id/keyboardButton23"
+                style="@style/keyboardButton"
+                android:text="W" />
+
+            <Button
+                android:id="@+id/keyboardButton24"
+                style="@style/keyboardButton"
+                android:text="X" />
+
+            <Button
+                android:id="@+id/keyboardButton25"
+                style="@style/keyboardButton"
+                android:text="Y" />
+
+            <Button
+                android:id="@+id/keyboardButton26"
+                style="@style/keyboardButton"
+                android:text="Z" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
