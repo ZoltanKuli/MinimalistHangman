@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="#FBE9E7"
-        android:orientation="horizontal"></LinearLayout>
+        android:orientation="horizontal" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/hangmanLayout"
@@ -24,16 +24,36 @@
             android:id="@+id/hangmanImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="In-game hangman graphics."
             android:src="@drawable/hangman___stage___starting_out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wordLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:id="@+id/word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_mono___bold"
+            android:letterSpacing="0.3"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="15"></androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/keyboardLayout"
@@ -55,47 +75,56 @@
             <Button
                 android:id="@+id/keyboardButton1"
                 style="@style/keyboardButton"
-                android:text="A" />
+                android:text="A"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton2"
                 style="@style/keyboardButton"
-                android:text="B" />
+                android:text="B"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton3"
                 style="@style/keyboardButton"
-                android:text="C" />
+                android:text="C"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton4"
                 style="@style/keyboardButton"
-                android:text="D" />
+                android:text="D"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton5"
                 style="@style/keyboardButton"
-                android:text="E" />
+                android:text="E"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton6"
                 style="@style/keyboardButton"
-                android:text="F" />
+                android:text="F"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton7"
                 style="@style/keyboardButton"
-                android:text="G" />
+                android:text="G"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton8"
                 style="@style/keyboardButton"
-                android:text="H" />
+                android:text="H"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton9"
                 style="@style/keyboardButton"
-                android:text="I" />
+                android:text="I"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
         </LinearLayout>
 
         <LinearLayout
@@ -109,47 +138,56 @@
             <Button
                 android:id="@+id/keyboardButton10"
                 style="@style/keyboardButton"
-                android:text="J" />
+                android:text="J"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton11"
                 style="@style/keyboardButton"
-                android:text="K" />
+                android:text="K"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton12"
                 style="@style/keyboardButton"
-                android:text="L" />
+                android:text="L"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton13"
                 style="@style/keyboardButton"
-                android:text="M" />
+                android:text="M"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton14"
                 style="@style/keyboardButton"
-                android:text="N" />
+                android:text="N"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton15"
                 style="@style/keyboardButton"
-                android:text="O" />
+                android:text="O"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton16"
                 style="@style/keyboardButton"
-                android:text="P" />
+                android:text="P"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton17"
                 style="@style/keyboardButton"
-                android:text="Q" />
+                android:text="Q"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton18"
                 style="@style/keyboardButton"
-                android:text="R" />
+                android:text="R"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
         </LinearLayout>
 
         <LinearLayout
@@ -163,42 +201,50 @@
             <Button
                 android:id="@+id/keyboardButton19"
                 style="@style/keyboardButton"
-                android:text="S" />
+                android:text="S"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton20"
                 style="@style/keyboardButton"
-                android:text="T" />
+                android:text="T"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton21"
                 style="@style/keyboardButton"
-                android:text="U" />
+                android:text="U"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton22"
                 style="@style/keyboardButton"
-                android:text="V" />
+                android:text="V"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton23"
                 style="@style/keyboardButton"
-                android:text="W" />
+                android:text="W"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton24"
                 style="@style/keyboardButton"
-                android:text="X" />
+                android:text="X"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton25"
                 style="@style/keyboardButton"
-                android:text="Y" />
+                android:text="Y"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/keyboardButton26"
                 style="@style/keyboardButton"
-                android:text="Z" />
+                android:text="Z"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
