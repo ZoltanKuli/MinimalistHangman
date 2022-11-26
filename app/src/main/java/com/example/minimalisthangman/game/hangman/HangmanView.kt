@@ -6,27 +6,27 @@ import com.example.minimalisthangman.game.GameActivity
 
 class HangmanView(gameActivity: GameActivity) {
 
-    private val hangmanPresenter: HangmanPresenter = HangmanPresenter(this)
-
     private val hangmanImage: ImageView = gameActivity.findViewById(R.id.hangmanImageView)
 
-    fun startOut() {
-        hangmanPresenter.startOut()
+    private val hangmanPresenter: HangmanPresenter = HangmanPresenter(this)
+
+    fun displayStartingOutStage() {
+        hangmanPresenter.selectStartingOutStageImageResource()
     }
 
-    fun loseLife() {
-        hangmanPresenter.loseLife()
+    fun displayOneLifeLessStage() {
+        hangmanPresenter.selectOneLifeLessStageImageResource()
     }
 
-    fun die() {
-        hangmanPresenter.die()
+    fun displayDeadStage() {
+        hangmanPresenter.selectDeadStageImageResource()
     }
 
-    fun win() {
-        hangmanPresenter.win()
+    fun displayWonStage() {
+        hangmanPresenter.selectWonStageImageResource()
     }
 
-    fun setHangmanImageResource(resId: Int) {
+    fun onImageResourceSelected(resId: Int) {
         hangmanImage.setImageResource(resId)
     }
 }

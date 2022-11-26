@@ -19,22 +19,22 @@ class HangmanPresenter(private val hangmanView: HangmanView) {
 
     private var dyingStageIndex: Int = DEFAULT_DYING_STAGE_INDEX
 
-    fun startOut() {
+    fun selectStartingOutStageImageResource() {
         dyingStageIndex = DEFAULT_DYING_STAGE_INDEX
-        hangmanView.setHangmanImageResource(R.drawable.hangman___stage___starting_out)
+        hangmanView.onImageResourceSelected(R.drawable.hangman___stage___starting_out)
     }
 
-    fun loseLife() {
+    fun selectOneLifeLessStageImageResource() {
         if (dyingStageIndex < dyingStages.size) {
-            hangmanView.setHangmanImageResource(dyingStages[dyingStageIndex++])
+            hangmanView.onImageResourceSelected(dyingStages[dyingStageIndex++])
         }
     }
 
-    fun die() {
-        hangmanView.setHangmanImageResource(R.drawable.hangman___stage___dead)
+    fun selectDeadStageImageResource() {
+        hangmanView.onImageResourceSelected(R.drawable.hangman___stage___dead)
     }
 
-    fun win() {
-        hangmanView.setHangmanImageResource(R.drawable.hangman___stage___won)
+    fun selectWonStageImageResource() {
+        hangmanView.onImageResourceSelected(R.drawable.hangman___stage___won)
     }
 }

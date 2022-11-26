@@ -4,9 +4,14 @@ class GamePresenter(private val gameActivity: GameActivity) {
 
     private val gameDomain: GameDomain = GameDomain(gameActivity.applicationContext)
 
-    private var wordToGuess: String = gameDomain.getRandomWord()
+    private lateinit var wordToGuess: String
+    private lateinit var guessedLetters: CharArray
 
-    init {
-        println("The word to guess is: $wordToGuess")
+    fun startNewGame() {
+        wordToGuess = gameDomain.getRandomWord()
+        guessedLetters = CharArray(wordToGuess.length)
+        println(wordToGuess)
+        println(guessedLetters)
+        gameActivity.onNewGame(guessedLetters.toString())
     }
 }

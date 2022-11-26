@@ -9,23 +9,50 @@ import com.example.minimalisthangman.game.word.WordView
 
 class GameActivity : AppCompatActivity() {
 
-    private lateinit var gamePresenter: GamePresenter
     private lateinit var keyboardView: KeyboardView
     private lateinit var wordView: WordView
     private lateinit var hangmanView: HangmanView
+    private lateinit var gamePresenter: GamePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
 
-        gamePresenter = GamePresenter(this)
         keyboardView = KeyboardView(this)
         wordView = WordView(this)
         hangmanView = HangmanView(this)
+        gamePresenter = GamePresenter(this)
+
+        gamePresenter.startNewGame()
     }
 
-    fun selectLetter(letter: Char) {
-        hangmanView.loseLife()
+    fun startNewGame() {
+        keyboardView.enableEveryButton()
+        gamePresenter.startNewGame()
+    }
+
+    fun guessLetter(guessedLetter: Char) {
+
+    }
+
+    fun onNewGame(wordToDisplay: String) {
+        hangmanView.displayStartingOutStage()
+    }
+
+    fun onWrongGuess(wordToDisplay: String) {
+
+    }
+
+    fun onFatalGuess(wordToDisplay: String) {
+
+    }
+
+    fun onRightGuess(wordToDisplay: String) {
+
+    }
+
+    fun onWordGuessed(wordToDisplay: String) {
+
     }
 }
