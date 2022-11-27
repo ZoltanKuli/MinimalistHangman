@@ -7,7 +7,7 @@ class GamePresenter(private val gameActivity: GameActivity) {
     companion object {
         val WORD_TO_DISPLAY_INIT: (Int) -> Char = { '.' }
         const val VALUE_TO_DISPLAY_BY_DEFAULT: Char = '-'
-        const val MAXIMUM_NUMBER_OF_LIVES : Int = 7
+        const val MAXIMUM_NUMBER_OF_LIVES: Int = 7
     }
 
     private val gameDomain: GameDomain = GameDomain(gameActivity.applicationContext)
@@ -18,11 +18,14 @@ class GamePresenter(private val gameActivity: GameActivity) {
     private var livesLeft by Delegates.notNull<Int>()
 
     fun startNewGame() {
-        wordToGuess = gameDomain.getRandomWord()
+        wordToGuess = gameDomain.getRandomWord(
+            if (this::wordToGuess.isInitialized) wordToGuess else null
+        )
         wordToDisplay = CharArray(wordToGuess.length, WORD_TO_DISPLAY_INIT)
-        updateWordToDisplay(VALUE_TO_DISPLAY_BY_DEFAULT)
         charactersGuessed = 0
         livesLeft = MAXIMUM_NUMBER_OF_LIVES
+
+        updateWordToDisplay(VALUE_TO_DISPLAY_BY_DEFAULT)
 
         gameActivity.onNewGame(String(wordToDisplay))
     }
