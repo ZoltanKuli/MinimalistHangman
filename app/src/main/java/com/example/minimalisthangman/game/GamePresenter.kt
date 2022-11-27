@@ -5,7 +5,8 @@ import kotlin.properties.Delegates
 class GamePresenter(private val gameActivity: GameActivity) {
 
     companion object {
-        val DEFAULT_CHARACTER_TO_DISPLAY: (Int) -> Char = { '.' }
+        val WORD_TO_DISPLAY_INIT: (Int) -> Char = { '.' }
+        const val VALUE_TO_DISPLAY_BY_DEFAULT: Char = '-'
         const val MAXIMUM_NUMBER_OF_LIVES : Int = 7
     }
 
@@ -18,7 +19,8 @@ class GamePresenter(private val gameActivity: GameActivity) {
 
     fun startNewGame() {
         wordToGuess = gameDomain.getRandomWord()
-        wordToDisplay = CharArray(wordToGuess.length, DEFAULT_CHARACTER_TO_DISPLAY)
+        wordToDisplay = CharArray(wordToGuess.length, WORD_TO_DISPLAY_INIT)
+        updateWordToDisplay(VALUE_TO_DISPLAY_BY_DEFAULT)
         charactersGuessed = 0
         livesLeft = MAXIMUM_NUMBER_OF_LIVES
 
@@ -37,10 +39,10 @@ class GamePresenter(private val gameActivity: GameActivity) {
         }
     }
 
-    private fun updateWordToDisplay(guessedLetter: Char) {
+    private fun updateWordToDisplay(valueToAdd: Char) {
         wordToGuess.asSequence().forEachIndexed { index, c ->
-            if (c == guessedLetter) {
-                wordToDisplay[index] = guessedLetter
+            if (c == valueToAdd) {
+                wordToDisplay[index] = valueToAdd
                 charactersGuessed++
             }
         }
