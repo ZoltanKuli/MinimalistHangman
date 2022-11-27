@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.minimalisthangman.R
 import com.example.minimalisthangman.game.hangman.HangmanView
 import com.example.minimalisthangman.game.keyboard.KeyboardView
+import com.example.minimalisthangman.game.menu.MenuView
 import com.example.minimalisthangman.game.word.WordView
 
 class GameActivity : AppCompatActivity() {
@@ -12,6 +13,7 @@ class GameActivity : AppCompatActivity() {
     private lateinit var keyboardView: KeyboardView
     private lateinit var wordView: WordView
     private lateinit var hangmanView: HangmanView
+    private lateinit var menuView: MenuView
     private lateinit var gamePresenter: GamePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +25,7 @@ class GameActivity : AppCompatActivity() {
         wordView = WordView(this)
         hangmanView = HangmanView(this)
         gamePresenter = GamePresenter(this)
+        menuView = MenuView(this)
 
         gamePresenter.startNewGame()
     }
