@@ -10,6 +10,10 @@ class HangmanView(gameActivity: GameActivity) {
 
     private val hangmanPresenter: HangmanPresenter = HangmanPresenter(this)
 
+    fun onImageResourceSelected(resId: Int) {
+        hangmanImage.setImageResource(resId)
+    }
+
     fun displayStartingOutStage() {
         hangmanPresenter.selectStartingOutStageImageResource()
     }
@@ -24,9 +28,5 @@ class HangmanView(gameActivity: GameActivity) {
 
     fun displayWonStage() {
         hangmanPresenter.selectWonStageImageResource()
-    }
-
-    fun onImageResourceSelected(resId: Int) {
-        hangmanImage.setImageResource(resId)
     }
 }

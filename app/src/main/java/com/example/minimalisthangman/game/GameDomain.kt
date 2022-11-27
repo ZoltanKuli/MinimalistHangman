@@ -17,7 +17,7 @@ class GameDomain(private val context: Context) {
         while (true) {
             val word = words[Random.nextInt(0, words.size)]
             if (words.size <= 1 || previousWord != word) {
-                return word
+                return word.uppercase()
             }
         }
     }

@@ -27,32 +27,37 @@ class GameActivity : AppCompatActivity() {
         gamePresenter.startNewGame()
     }
 
+    fun onNewGame(wordToDisplay: String) {
+        wordView.displayWord(wordToDisplay)
+        hangmanView.displayStartingOutStage()
+    }
+
+    fun onWrongGuess() {
+        hangmanView.displayOneLifeLessStage()
+    }
+
+    fun onFatalGuess(wordToDisplay: String) {
+        keyboardView.disableEveryButton()
+        wordView.displayWord(wordToDisplay)
+        hangmanView.displayDeadStage()
+    }
+
+    fun onRightGuess(wordToDisplay: String) {
+        wordView.displayWord(wordToDisplay)
+    }
+
+    fun onWordGuessed(wordToDisplay: String) {
+        keyboardView.disableEveryButton()
+        wordView.displayWord(wordToDisplay)
+        hangmanView.displayWonStage()
+    }
+
     fun startNewGame() {
         keyboardView.enableEveryButton()
         gamePresenter.startNewGame()
     }
 
     fun guessLetter(guessedLetter: Char) {
-
-    }
-
-    fun onNewGame(wordToDisplay: String) {
-        hangmanView.displayStartingOutStage()
-    }
-
-    fun onWrongGuess(wordToDisplay: String) {
-
-    }
-
-    fun onFatalGuess(wordToDisplay: String) {
-
-    }
-
-    fun onRightGuess(wordToDisplay: String) {
-
-    }
-
-    fun onWordGuessed(wordToDisplay: String) {
-
+        gamePresenter.guessLetter(guessedLetter)
     }
 }

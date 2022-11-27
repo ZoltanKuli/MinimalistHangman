@@ -19,17 +19,25 @@ class KeyboardView(private val gameActivity: GameActivity) : OnClickListener {
         buttons.stream().forEach { button -> button.setOnClickListener(this) }
     }
 
-    fun enableEveryButton() {
-        buttons.forEach { button ->
-            button.isEnabled = true
-        }
-    }
-
     override fun onClick(view: View?) {
         val button = view as Button
 
         button.isEnabled = false
-        gameActivity.guessLetter(button.text.first())
+        gameActivity.guessLetter(button.text.first().uppercaseChar())
+    }
+
+    fun enableEveryButton() {
+        setIsEnabledPropertyForEveryButton(true)
+    }
+
+    fun disableEveryButton() {
+        setIsEnabledPropertyForEveryButton(false)
+    }
+
+    private fun setIsEnabledPropertyForEveryButton(isEnabled: Boolean) {
+        buttons.forEach { button ->
+            button.isEnabled = isEnabled
+        }
     }
 
     private fun collectKeyboardButtons(): ArrayList<Button> {
